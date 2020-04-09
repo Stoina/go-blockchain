@@ -15,6 +15,6 @@ CREATE TABLE public.bc_participant
 TABLESPACE pg_default;
 
 ALTER TABLE public.bc_participant
-    OWNER to postgres;
+    OWNER to blockchain_admin;
 COMMENT ON TABLE public.bc_participant
     IS 'Participant table for blockchain network';
