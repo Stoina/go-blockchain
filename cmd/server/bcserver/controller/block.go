@@ -49,7 +49,7 @@ func (bc *BlockController) Repository() repo.Repository {
 // ServeHTTP exported
 // ...
 func (bc *BlockController) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
-
+	HandleRequest(writer, request, bc)
 }
 
 // Post exported
