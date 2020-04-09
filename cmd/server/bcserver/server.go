@@ -44,5 +44,7 @@ func (server *BCServer) Start() error {
 
 func getControllerToHandle(dbConn *db.Connection) []controller.Controller {
 	return []controller.Controller{
-		controller.NewParticipantController(dbConn)}
+		controller.NewParticipantController(dbConn),
+		controller.NewTransactionController(dbConn),
+		controller.NewBlockController(dbConn)}
 }
