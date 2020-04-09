@@ -3,7 +3,7 @@ package transaction
 import (
 	"crypto/sha256"
 
-	"github.com/Stoina/go-blockchain/blockchain/encoding"
+	"github.com/stoina/go-blockchain/blockchain/encoding"
 )
 
 // GetHashCode exported

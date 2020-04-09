@@ -1,7 +1,7 @@
 package transaction
 
 import (
-	db "github.com/Stoina/go-database"
+	db "github.com/stoina/go-database"
 )
 
 // ReadTransactionByID exported

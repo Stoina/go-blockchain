@@ -1,7 +1,7 @@
 package block
 
 import (
-	"github.com/Stoina/go-blockchain/blockchain/transaction"
+	"github.com/stoina/go-blockchain/blockchain/transaction"
 )
 
 // Block exported
