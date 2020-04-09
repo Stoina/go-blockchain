@@ -1,16 +1,17 @@
-package participant
+package participantdb
 
 import (
 	"encoding/json"
 	"errors"
 	"fmt"
 
-	db "github.com/Stoina/go-database"
+	participant "github.com/stoina/go-blockchain/blockchain/participant"
+	db "github.com/stoina/go-database"
 )
 
 // ReadParticipantByID exported
 // ...
-func ReadParticipantByID(id string, dbConn *db.Connection) (*Participant, error) {
+func ReadParticipantByID(id string, dbConn *db.Connection) (*participant.Participant, error) {
 
 	result, err := dbConn.Query("select * from public.bc_participant where bcp_id = " + id)
 
@@ -23,7 +24,7 @@ func ReadParticipantByID(id string, dbConn *db.Connection) (*Participant, error)
 
 // ReadParticipantByEMail exported
 // ...
-func ReadParticipantByEMail(email string, dbConn *db.Connection) (*Participant, error) {
+func ReadParticipantByEMail(email string, dbConn *db.Connection) (*participant.Participant, error) {
 
 	result, err := dbConn.Query("select * from public.bc_participant where bcp_email = " + email)
 
@@ -36,7 +37,7 @@ func ReadParticipantByEMail(email string, dbConn *db.Connection) (*Participant, 
 
 // ReadParticipants exported
 // ...
-func ReadParticipants(dbConn *db.Connection) ([]Participant, error) {
+func ReadParticipants(dbConn *db.Connection) ([]participant.Participant, error) {
 	result, err := dbConn.Query("select * from public.bc_participant")
 
 	if err != nil {
@@ -49,7 +50,7 @@ func ReadParticipants(dbConn *db.Connection) ([]Participant, error) {
 		return nil, err
 	}
 
-	participants := make([]Participant, result.RowCount)
+	participants := make([]participant.Participant, result.RowCount)
 	err = json.Unmarshal([]byte(jsonDataString), &participants)
 
 	return participants, nil
@@ -57,16 +58,16 @@ func ReadParticipants(dbConn *db.Connection) ([]Participant, error) {
 
 // CreateOrUpdateParticipant exported
 // ...
-func (participant *Participant) CreateOrUpdateParticipant(dbConn *db.Connection) (string, error) {
+func CreateOrUpdateParticipant(participant *participant.Participant, dbConn *db.Connection) error {
 	_, err := dbConn.CallProcedure("proc_create_or_update_participant", getProcedureParams(participant))
-	return "", err
+	return err
 }
 
-func createParticipantByResult(result *db.Result) (*Participant, error) {
+func createParticipantByResult(result *db.Result) (*participant.Participant, error) {
 
 	if result.RowCount == 1 {
 
-		participant := &Participant{}
+		participant := &participant.Participant{}
 
 		jsonDataString, err := result.ConvertDataToJSONString()
 
@@ -86,7 +87,7 @@ func createParticipantByResult(result *db.Result) (*Participant, error) {
 
 }
 
-func getProcedureParams(participant *Participant) []interface{} {
+func getProcedureParams(participant *participant.Participant) []interface{} {
 
 	return []interface{}{
 		participant.ID,
