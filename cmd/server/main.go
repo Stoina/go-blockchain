@@ -11,6 +11,8 @@ func main() {
 	err := bcserver.Start()
 
 	if err != nil {
-		log.Println("Server successfully started...")
+		log.Println(err.Error())
 	}
+
+	log.Println("Server successfully started...")
 }
