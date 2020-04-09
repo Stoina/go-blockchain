@@ -15,9 +15,9 @@ type BCServer struct {
 	DBConn *db.Connection
 }
 
-// Create exported
+// New exported
 // ...
-func Create() *BCServer {
+func New() *BCServer {
 	return &BCServer{
 		Port: 8080}
 }
@@ -44,5 +44,5 @@ func (server *BCServer) Start() error {
 
 func getControllerToHandle(dbConn *db.Connection) []controller.Controller {
 	return []controller.Controller{
-		controller.CreateParticipantController(dbConn)}
+		controller.NewParticipantController(dbConn)}
 }

@@ -7,9 +7,9 @@ type Value struct {
 	Unit  string
 }
 
-// Create exported
+// New exported
 // ...
-func Create(value float64, unit string) *Value {
+func New(value float64, unit string) *Value {
 	return &Value{
 		Value: value,
 		Unit:  unit}

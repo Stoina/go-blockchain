@@ -19,13 +19,13 @@ type ParticipantController struct {
 	dbConn     *db.Connection
 }
 
-// CreateParticipantController exorted
+// NewParticipantController exorted
 // ...
-func CreateParticipantController(dbConn *db.Connection) *ParticipantController {
+func NewParticipantController(dbConn *db.Connection) *ParticipantController {
 	return &ParticipantController{
 		name:       "Participant Controller",
 		url:        "participant",
-		repository: repo.CreateParticipantRepository(),
+		repository: repo.NewParticipantRepository(),
 		dbConn:     dbConn}
 }
 

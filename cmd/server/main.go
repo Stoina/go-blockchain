@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	bcserver := bcserver.Create()
+	bcserver := bcserver.New()
 	err := bcserver.Start()
 
 	if err != nil {

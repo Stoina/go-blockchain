@@ -16,9 +16,9 @@ import (
 type ParticipantRepository struct {
 }
 
-// CreateParticipantRepository exported
+// NewParticipantRepository exported
 // ...
-func CreateParticipantRepository() *ParticipantRepository {
+func NewParticipantRepository() *ParticipantRepository {
 	return &ParticipantRepository{}
 }
 
@@ -30,7 +30,7 @@ func (pr *ParticipantRepository) Create(jsonString string, db *db.Connection) *r
 	err := json.Unmarshal([]byte(jsonString), &participant)
 
 	if err != nil {
-		return result.Create("", true, err.Error(), "", false)
+		return result.New("", true, err.Error(), "", false)
 	}
 
 	participant.ID = string(uuid.GenerateUUID())
@@ -38,10 +38,10 @@ func (pr *ParticipantRepository) Create(jsonString string, db *db.Connection) *r
 	err = participantdb.CreateOrUpdateParticipant(&participant, db)
 
 	if err != nil {
-		return result.Create("", true, err.Error(), "", false)
+		return result.New("", true, err.Error(), "", false)
 	}
 
-	return result.Create(encoding.ConvertToJSON(participant), false, "", "", true)
+	return result.New(encoding.ConvertToJSON(participant), false, "", "", true)
 }
 
 // Update exported
@@ -62,10 +62,10 @@ func (pr *ParticipantRepository) ReadAll(db *db.Connection) *result.RepositoryRe
 	participants, err := participantdb.ReadParticipants(db)
 
 	if err != nil {
-		return result.Create("", true, err.Error(), "", false)
+		return result.New("", true, err.Error(), "", false)
 	}
 
-	return result.Create(encoding.ConvertToJSON(participants), false, "", "", true)
+	return result.New(encoding.ConvertToJSON(participants), false, "", "", true)
 }
 
 // ReadByID exported

@@ -12,9 +12,9 @@ type RepositoryResult struct {
 	Successful      bool
 }
 
-// Create exported
-// Create ...
-func Create(data string, errorOccurred bool, errorMessage string, responseMessage string, successful bool) *RepositoryResult {
+// New exported
+// ...
+func New(data string, errorOccurred bool, errorMessage string, responseMessage string, successful bool) *RepositoryResult {
 	return &RepositoryResult{
 		Data:            data,
 		ErrorOccurred:   errorOccurred,

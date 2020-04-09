@@ -19,7 +19,7 @@ func ReadParticipantByID(id string, dbConn *db.Connection) (*participant.Partici
 		return nil, err
 	}
 
-	return createParticipantByResult(result)
+	return newParticipantByResult(result)
 }
 
 // ReadParticipantByEMail exported
@@ -32,7 +32,7 @@ func ReadParticipantByEMail(email string, dbConn *db.Connection) (*participant.P
 		return nil, err
 	}
 
-	return createParticipantByResult(result)
+	return newParticipantByResult(result)
 }
 
 // ReadParticipants exported
@@ -63,7 +63,7 @@ func CreateOrUpdateParticipant(participant *participant.Participant, dbConn *db.
 	return err
 }
 
-func createParticipantByResult(result *db.Result) (*participant.Participant, error) {
+func newParticipantByResult(result *db.Result) (*participant.Participant, error) {
 
 	if result.RowCount == 1 {
 

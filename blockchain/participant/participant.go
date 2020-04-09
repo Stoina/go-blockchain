@@ -13,9 +13,9 @@ type Participant struct {
 	Firstname string `json:"bcp_firstname"`
 }
 
-// Create exported
+// New exported
 // ...
-func Create(email string, lastname string, firstname string) *Participant {
+func New(email string, lastname string, firstname string) *Participant {
 	return &Participant{
 		ID:        string(uuid.GenerateUUID()),
 		EMail:     email,
@@ -23,9 +23,9 @@ func Create(email string, lastname string, firstname string) *Participant {
 		Firstname: firstname}
 }
 
-// CreateWithID exported
+// NewWithID exported
 // ...
-func CreateWithID(id string, email string, lastname string, firstname string) *Participant {
+func NewWithID(id string, email string, lastname string, firstname string) *Participant {
 	return &Participant{
 		ID:        id,
 		EMail:     email,

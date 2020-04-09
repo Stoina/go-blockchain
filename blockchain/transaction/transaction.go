@@ -15,9 +15,9 @@ type Transaction struct {
 	CreditValue *value.Value
 }
 
-// Create exported
+// New exported
 // ...
-func Create(transmitter *participant.Participant, receiver *participant.Participant, creditValue *value.Value) *Transaction {
+func New(transmitter *participant.Participant, receiver *participant.Participant, creditValue *value.Value) *Transaction {
 	return &Transaction{
 		ID:          string(uuid.GenerateUUID()),
 		Transmitter: transmitter,
@@ -25,9 +25,9 @@ func Create(transmitter *participant.Participant, receiver *participant.Particip
 		CreditValue: creditValue}
 }
 
-// CreateWithID exported
+// NewWithID exported
 // ...
-func CreateWithID(id string, transmitter *participant.Participant, receiver *participant.Participant, creditValue *value.Value) *Transaction {
+func NewWithID(id string, transmitter *participant.Participant, receiver *participant.Participant, creditValue *value.Value) *Transaction {
 	return &Transaction{
 		ID:          id,
 		Transmitter: transmitter,

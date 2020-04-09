@@ -12,9 +12,9 @@ type Credit struct {
 	Value       *value.Value
 }
 
-// Create exported
+// New exported
 // ...
-func Create(participant *participant.Participant, value *value.Value) *Credit {
+func New(participant *participant.Participant, value *value.Value) *Credit {
 	return &Credit{
 		Participant: participant,
 		Value:       value}
