@@ -1,17 +1,14 @@
 package uuid
 
 import (
-	"os/exec"
+	"encoding/hex"
+
+	guuid "github.com/google/uuid"
 )
 
 // GenerateUUID exported
 // ...
-func GenerateUUID() []byte {
-	uuid, err := exec.Command("uuidgen").Output()
-
-	if err != nil {
-		return []byte{}
-	}
-
-	return uuid[:36]
+func GenerateUUID() string {
+	uuid := guuid.New()
+	return hex.EncodeToString(uuid[:])
 }
