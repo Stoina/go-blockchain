@@ -12,6 +12,7 @@ type Transaction struct {
 	ID          string
 	Transmitter *participant.Participant
 	Receiver    *participant.Participant
+	Status      int
 	CreditValue *value.Value
 }
 
@@ -22,6 +23,7 @@ func New(transmitter *participant.Participant, receiver *participant.Participant
 		ID:          string(uuid.GenerateUUID()),
 		Transmitter: transmitter,
 		Receiver:    receiver,
+		Status:      StatusCreated,
 		CreditValue: creditValue}
 }
 
@@ -32,5 +34,6 @@ func NewWithID(id string, transmitter *participant.Participant, receiver *partic
 		ID:          id,
 		Transmitter: transmitter,
 		Receiver:    receiver,
+		Status:      StatusCreated,
 		CreditValue: creditValue}
 }

@@ -59,7 +59,19 @@ func ReadParticipants(dbConn *db.Connection) ([]participant.Participant, error) 
 // CreateOrUpdateParticipant exported
 // ...
 func CreateOrUpdateParticipant(participant *participant.Participant, dbConn *db.Connection) error {
-	_, err := dbConn.CallProcedure("proc_create_or_update_participant", getProcedureParams(participant))
+
+	existingParticipant, err := dbConn.Query("select * from public.bc_participant where bcp_email = '" + participant.EMail + "'")
+
+	if existingParticipant.RowCount == 0 {
+
+		dbConn.Insert(getInsertStatement(participant))
+
+	} else {
+		if participant.ID != existingParticipant.Data[0]["bcp_id"] {
+			participant.ID = fmt.Sprint(existingParticipant.Data[0]["bcp_id"])
+		}
+	}
+
 	return err
 }
 
@@ -87,13 +99,11 @@ func newParticipantByResult(result *db.Result) (*participant.Participant, error)
 
 }
 
-func getProcedureParams(participant *participant.Participant) []interface{} {
-
-	return []interface{}{
+func getInsertStatement(participant *participant.Participant) *db.InsertStatement {
+	return db.NewInsertStatement("bc_participant", []string{"bcp_id", "bcp_email", "bcp_lastname", "bcp_firstname", "bcp_hash"}, []interface{}{
 		participant.ID,
 		participant.EMail,
 		participant.Lastname,
 		participant.Firstname,
-		fmt.Sprintf("%x", participant.GetHashCode())}
-
+		fmt.Sprintf("%x", participant.GetHashCode())})
 }
