@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/stoina/go-blockchain/cmd/bc-backend/repository/result"
-	db "github.com/stoina/go-database"
+	"github.com/Stoina/go-blockchain/cmd/bc-backend/repository/result"
+	db "github.com/Stoina/go-database"
 )
 
 // Repository exported

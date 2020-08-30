@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	participant "github.com/stoina/go-blockchain/blockchain/participant"
-	db "github.com/stoina/go-database"
+	participant "github.com/Stoina/go-blockchain/blockchain/participant"
+	db "github.com/Stoina/go-database"
 )
 
 // ReadParticipantByID exported

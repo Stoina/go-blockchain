@@ -3,8 +3,8 @@ package transactiondb
 import (
 	"fmt"
 
-	"github.com/stoina/go-blockchain/blockchain/transaction"
-	db "github.com/stoina/go-database"
+	"github.com/Stoina/go-blockchain/blockchain/transaction"
+	db "github.com/Stoina/go-database"
 )
 
 // ReadTransactionByID exported

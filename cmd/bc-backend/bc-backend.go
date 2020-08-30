@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strconv"
 
-	controller "github.com/stoina/go-blockchain/cmd/bc-backend/controller"
-	db "github.com/stoina/go-database"
+	controller "github.com/Stoina/go-blockchain/cmd/bc-backend/controller"
+	db "github.com/Stoina/go-database"
 )
 
 func main() {

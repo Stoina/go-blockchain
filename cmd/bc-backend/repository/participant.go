@@ -3,12 +3,12 @@ package repository
 import (
 	"encoding/json"
 
-	participant "github.com/stoina/go-blockchain/blockchain/participant"
-	participantdb "github.com/stoina/go-blockchain/blockchain/participant/db"
-	"github.com/stoina/go-blockchain/blockchain/util/encoding"
-	"github.com/stoina/go-blockchain/blockchain/uuid"
-	"github.com/stoina/go-blockchain/cmd/bc-backend/repository/result"
-	db "github.com/stoina/go-database"
+	participant "github.com/Stoina/go-blockchain/blockchain/participant"
+	participantdb "github.com/Stoina/go-blockchain/blockchain/participant/db"
+	"github.com/Stoina/go-blockchain/blockchain/util/encoding"
+	"github.com/Stoina/go-blockchain/blockchain/uuid"
+	"github.com/Stoina/go-blockchain/cmd/bc-backend/repository/result"
+	db "github.com/Stoina/go-database"
 )
 
 // ParticipantRepository export

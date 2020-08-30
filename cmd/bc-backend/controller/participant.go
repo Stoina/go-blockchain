@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"net/url"
 
-	db "github.com/stoina/go-database"
+	db "github.com/Stoina/go-database"
 
-	repo "github.com/stoina/go-blockchain/cmd/bc-backend/repository"
-	result "github.com/stoina/go-blockchain/cmd/bc-backend/repository/result"
+	repo "github.com/Stoina/go-blockchain/cmd/bc-backend/repository"
+	result "github.com/Stoina/go-blockchain/cmd/bc-backend/repository/result"
 )
 
 // ParticipantController exported

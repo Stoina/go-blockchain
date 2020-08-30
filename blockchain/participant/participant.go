@@ -1,7 +1,7 @@
 package participant
 
 import (
-	uuid "github.com/stoina/go-blockchain/blockchain/uuid"
+	uuid "github.com/Stoina/go-blockchain/blockchain/uuid"
 )
 
 // Participant exported

@@ -3,12 +3,12 @@ package repository
 import (
 	"encoding/json"
 
-	"github.com/stoina/go-blockchain/blockchain/transaction"
-	transactiondb "github.com/stoina/go-blockchain/blockchain/transaction/db"
-	"github.com/stoina/go-blockchain/blockchain/util/encoding"
-	"github.com/stoina/go-blockchain/blockchain/uuid"
-	"github.com/stoina/go-blockchain/cmd/bc-backend/repository/result"
-	db "github.com/stoina/go-database"
+	"github.com/Stoina/go-blockchain/blockchain/transaction"
+	transactiondb "github.com/Stoina/go-blockchain/blockchain/transaction/db"
+	"github.com/Stoina/go-blockchain/blockchain/util/encoding"
+	"github.com/Stoina/go-blockchain/blockchain/uuid"
+	"github.com/Stoina/go-blockchain/cmd/bc-backend/repository/result"
+	db "github.com/Stoina/go-database"
 )
 
 // TransactionRepository exported

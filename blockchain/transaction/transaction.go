@@ -1,9 +1,9 @@
 package transaction
 
 import (
-	participant "github.com/stoina/go-blockchain/blockchain/participant"
-	uuid "github.com/stoina/go-blockchain/blockchain/uuid"
-	value "github.com/stoina/go-blockchain/blockchain/value"
+	participant "github.com/Stoina/go-blockchain/blockchain/participant"
+	uuid "github.com/Stoina/go-blockchain/blockchain/uuid"
+	value "github.com/Stoina/go-blockchain/blockchain/value"
 )
 
 // Transaction exported

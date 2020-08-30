@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"net/url"
 
-	repo "github.com/stoina/go-blockchain/cmd/bc-backend/repository"
-	result "github.com/stoina/go-blockchain/cmd/bc-backend/repository/result"
+	repo "github.com/Stoina/go-blockchain/cmd/bc-backend/repository"
+	result "github.com/Stoina/go-blockchain/cmd/bc-backend/repository/result"
 )
 
 // Controller exported

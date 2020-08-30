@@ -1,8 +1,8 @@
 package credit
 
 import (
-	"github.com/stoina/go-blockchain/blockchain/participant"
-	"github.com/stoina/go-blockchain/blockchain/value"
+	"github.com/Stoina/go-blockchain/blockchain/participant"
+	"github.com/Stoina/go-blockchain/blockchain/value"
 )
 
 // Credit exported
